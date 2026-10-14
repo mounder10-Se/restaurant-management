@@ -1,0 +1,12 @@
+.git-backup/
+.idea/
+node_modules/
+venv/
+.venv/
+.env
+.env.*
+!.env.example
+dist/
+build/
+__pycache__/
+*.pyc
