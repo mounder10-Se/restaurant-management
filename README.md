@@ -394,6 +394,3 @@ savoria-restaurant-management/
 
 ---
 
-## 📄 Licence
-
-Ce projet a été développé à des fins académiques.
