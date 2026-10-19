@@ -1,30 +1,38 @@
-# Savoria — Plateforme de Gestion de Restaurants avec Assistant IA
+# Savoria — Plateforme de Gestion Multi-Restaurants
 
-Savoria est une plateforme web de **gestion multi-restaurants** qui centralise les opérations quotidiennes des établissements de restauration. Elle associe une application web développée avec React et TypeScript à une API REST développée avec Django et Django REST Framework. Un assistant conversationnel basé sur l'intelligence artificielle est également prévu et son intégration est en cours.
+Savoria est une plateforme web de **gestion multi-restaurants** qui centralise les opérations quotidiennes des établissements de restauration. Elle associe une application web développée avec React et TypeScript à une API REST développée avec Django et Django REST Framework.
 
-Le système centralise les commandes, les réservations, les menus du jour, l'approvisionnement, le suivi financier et la surveillance de la température des chambres froides au sein d'une interface unique. Il propose un espace dédié à chaque métier du restaurant.
+Le système centralise la gestion des commandes, des réservations, des menus du jour, de l'approvisionnement, du suivi financier et de la surveillance de la température des chambres froides au sein d'une interface unique. Il propose des espaces dédiés aux clients, chefs, managers, serveurs, caissiers, livreurs, fournisseurs et administrateurs.
 
 ## 🎯 Objectifs
 
 - Offrir aux clients un parcours fluide : consultation des menus, commandes, réservations et avis.
 - Fournir des espaces adaptés aux différents métiers de la restauration.
 - Automatiser certaines tâches répétitives : notifications, calcul des revenus et attribution des tables.
+- Faciliter la gestion des stocks, des ingrédients et de l'approvisionnement.
 - Assurer le suivi de la chaîne du froid grâce à un capteur de température et d'humidité.
-- Préparer l'intégration d'un assistant conversationnel IA pour faciliter l'accès aux informations et automatiser certains processus.
+- Centraliser le suivi financier et la supervision des restaurants.
 
-## 🤖 Assistant IA (Chatbot)
+## 📱 Fonctionnalités principales
 
-> **Statut : module en cours d'intégration.** La plateforme de gestion constitue le socle applicatif du chatbot.
+- **Espace client :** authentification JWT, consultation des menus, panier, commandes, réservations, suivi des commandes et avis.
+- **Espace client corporate :** gestion des commandes professionnelles, tarification entreprise, conventions et rapports.
+- **Espace chef :** gestion des plats, recettes, ingrédients, inventaire et menus du jour.
+- **Espace manager :** validation des menus du jour, suivi des revenus et dépenses, supervision des employés, commandes et réservations.
+- **Espace serveur :** gestion des commandes en salle et consultation des réservations.
+- **Espace caissier :** suivi des paiements et consultation des rapports.
+- **Espace livreur :** suivi des commandes en livraison et déclaration des livraisons échouées.
+- **Espace fournisseur :** validation des besoins en ingrédients et suivi de l'approvisionnement.
+- **Administration :** gestion des utilisateurs, rôles, restaurants, plats, tables, réservations, avis et indicateurs financiers.
+- **Suivi IoT :** collecte des mesures de température et d'humidité avec signalement visuel des alertes.
 
-**Objectif :** améliorer l'expérience utilisateur et automatiser certains processus grâce à un assistant conversationnel.
+## 🔄 Automatisation des processus
 
-| Utilisateur | Cas d'usage prévus |
-|---|---|
-| Client | Questions sur le menu, les ingrédients et les horaires ; création d'une réservation ou d'une commande en langage naturel |
-| Personnel | Consultation du statut des commandes et signalement d'une alerte de température |
-| Manager | Résumé des ventes du jour à partir des statistiques de revenus |
-
-**Intégration prévue :** un endpoint `/api/chatbot/` côté backend appelant un modèle de langage, ainsi qu'un widget de discussion dans le frontend React.
+- Mise à jour des revenus du restaurant lors de l'enregistrement d'un paiement.
+- Notifications destinées au personnel concerné lors de la création de commandes.
+- Création automatique du profil métier correspondant au rôle d'un utilisateur.
+- Attribution automatique d'une table disponible selon la capacité demandée.
+- Circuit de validation du menu du jour par le manager, puis par le fournisseur.
 
 ## 🛠️ Technologies utilisées
 
@@ -40,9 +48,9 @@ Le système centralise les commandes, les réservations, les menus du jour, l'ap
 ### Backend
 - Python et Django 5.2
 - Django REST Framework 3.16
-- SimpleJWT
-- Jazzmin
-- Cloudinary
+- SimpleJWT pour l'authentification
+- Jazzmin pour l'interface d'administration
+- Cloudinary pour le stockage des images
 - WhiteNoise et Gunicorn
 - SQLite pour le développement et PostgreSQL pour la production
 
@@ -73,5 +81,3 @@ savoria-restaurant-management/
 │   └── package.json
 └── README.md
 ```
-
-Les chemins des fichiers, les noms des dossiers, les endpoints et les commandes d'installation du README d'origine doivent rester inchangés. Seules les formulations relatives à la présentation du projet sont adaptées pour ne plus le décrire comme un projet de fin d'études.
